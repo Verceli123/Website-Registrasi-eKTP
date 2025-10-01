@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/logo.png" />
+    <title>e-KTP Registration - Register</title>
+    <style>
+      body { font-family: Arial, sans-serif; text-align: center; background: #f9f9f9; margin: 0; }
+      header { background: #0066cc; padding: 15px; }
+      nav { display: flex; justify-content: center; gap: 20px; }
+      nav a { color: white; text-decoration: none; font-weight: bold; }
+      nav a:hover { text-decoration: underline; }
+      main { margin-top: 40px; }
+      .logo img { width: 150px; margin-bottom: 20px; }
+      form { background: white; padding: 20px; border-radius: 8px; width: 400px; margin: auto; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+      input { width: 90%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+      button { padding: 10px 20px; background: #0066cc; border: none; border-radius: 6px; color: white; cursor: pointer; }
+      button:hover { background: #004d99; }
+      footer { margin-top: 50px; background: #f0f0f0; padding: 15px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo e-KTP" />
+      </div>
+      <form>
+        <h2>Form Registrasi e-KTP</h2>
+        <input type="text" placeholder="NIK" required />
+        <input type="text" placeholder="Nama Lengkap" required />
+        <input type="date" required />
+        <input type="text" placeholder="Alamat" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Daftar</button>
+      </form>
+    </main>
+
+    <footer>
+      <h4>&copy; Registrasi e-KTP 2025</h4>
+    </footer>
+  </body>
+</html>
