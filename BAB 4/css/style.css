@@ -1,0 +1,101 @@
+/* Style umum */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+header {
+  background: #0066cc;
+  padding: 15px;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin: auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004d99;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 80%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #0066cc;
+  color: white;
+}
+
+footer {
+  margin-top: 50px;
+  background: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+}
+
+.dashboard-img {
+  width: 300px;   /* lebih kecil */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
