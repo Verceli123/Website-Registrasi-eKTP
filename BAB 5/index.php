@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/logo.png" />
+    <title>e-KTP Registration</title>
+    <style>
+      :root {
+        --primary: #0066cc;
+        --primary-dark: #004d99;
+        --bg: #f9f9f9;
+        --card: #fff;
+        --text: #333;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg);
+        color: var(--text);
+      }
+
+      header {
+        background: var(--primary);
+        padding: 15px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        margin-top: 40px;
+        padding: 0 18px 50px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .logo {
+        margin-bottom: 18px;
+      }
+
+      .logo img {
+        width: 160px;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 6px 16px rgba(1, 20, 50, 0.06);
+      }
+
+      h1 {
+        font-size: 28px;
+        color: var(--text);
+        margin: 10px 0 6px;
+      }
+
+      p.lead {
+        color: #666;
+        margin: 0 0 20px;
+      }
+
+      /* Tombol utama */
+      .actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .actions button,
+      .main-btn {
+        padding: 10px 16px;
+        background: var(--primary);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .actions button:hover,
+      .main-btn:hover {
+        background: var(--primary-dark);
+      }
+
+      /* kartu info */
+      .info-card {
+        max-width: 760px;
+        margin: 18px auto;
+        background: var(--card);
+        border-radius: 10px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 20px rgba(2, 20, 60, 0.06);
+        display: none;
+        text-align: left;
+        color: var(--text);
+      }
+
+      footer {
+        margin-top: 30px;
+        background: #f0f0f0;
+        padding: 15px;
+      }
+
+      /* Toast */
+      .toast-wrap {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .toast {
+        min-width: 220px;
+        max-width: 360px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        transform: translateY(10px);
+        opacity: 0;
+        animation: toastIn 0.28s forwards;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .toast.success {
+        background: #28a745;
+      }
+
+      .toast.info {
+        background: #0066cc;
+      }
+
+      .toast button.close {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      @keyframes toastIn {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Mode Gelap */
+      .dark {
+        --bg: #0f1724;
+        --card: #091124;
+        --text: #e6eef8;
+        --primary: #2b6cb0;
+        --primary-dark: #1e4e8b;
+      }
+
+      /* Popup Box */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+      }
+
+      .popup-content button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo e-KTP" id="logoImg" />
+      </div>
+
+      <h1 id="mainTitle">Selamat Datang di Website Registrasi e-KTP</h1>
+      <p class="lead" id="subtitle">
+        Daftarkan identitasmu secara online dengan mudah dan cepat.
+      </p>
+
+      <div class="actions">
+        <button id="btnInfo">Info e-KTP</button>
+        <button id="btnToggleDark">Mode Gelap</button>
+        <button id="btnGuide">Panduan Registrasi</button>
+      </div>
+
+      <div style="margin: 10px 0">
+        <button
+          class="main-btn"
+          type="button"
+          onclick="location.href='register.html'"
+        >
+          Mulai Registrasi
+        </button>
+      </div>
+
+      <div class="info-card" id="infoCard" aria-hidden="true">
+        <h3>Informasi Singkat e-KTP</h3>
+        <p>
+          e-KTP adalah Kartu Tanda Penduduk elektronik yang memuat data identitas
+          dan biometrik. Pastikan dokumen dan data yang dimasukkan sesuai dengan
+          dokumen asli.
+        </p>
+        <ul>
+          <li>Persyaratan: Kartu Keluarga, akta kelahiran / buku nikah (jika diperlukan).</li>
+          <li>Proses: Pendaftaran → Verifikasi → Pengambilan foto & sidik jari → Cetak.</li>
+          <li>Hubungi kantor Disdukcapil setempat jika ada kendala.</li>
+        </ul>
+      </div>
+
+      <div id="guideContainer" style="max-width: 760px; margin: 14px auto"></div>
+    </main>
+
+    <footer>
+      <h4>&copy; Registrasi e-KTP 2025</h4>
+    </footer>
+
+    <!-- Popup Box -->
+    <div id="popupWelcome" class="popup">
+      <div class="popup-content">
+        <h3>Selamat Datang!</h3>
+        <p>Terima kasih telah mengunjungi situs e-KTP Online.</p>
+        <button id="closePopup">Tutup</button>
+      </div>
+    </div>
+
+    <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+    <!-- Hubungkan ke file JS -->
+    <script src="js/toast.js"></script>
+
+    <script>
+      // === Popup 1 (custom modal) ===
+      window.addEventListener("load", () => {
+        document.getElementById("popupWelcome").style.display = "flex";
+      });
+
+      document.getElementById("closePopup").addEventListener("click", () => {
+        document.getElementById("popupWelcome").style.display = "none";
+      });
+
+      // === Popup 2 (confirm JS) ===
+      setTimeout(() => {
+        const lanjut = confirm("Apakah Anda ingin melihat panduan registrasi?");
+        if (lanjut) {
+          document.getElementById("btnGuide").click();
+        }
+      }, 2000);
+
+      // === Event 1: Klik tombol Info ===
+      document.getElementById("btnInfo").addEventListener("click", () => {
+        const card = document.getElementById("infoCard");
+        const visible = card.style.display === "block";
+        card.style.display = visible ? "none" : "block";
+        localStorage.setItem("infoVisible", !visible);
+      });
+
+      // === Event 2: Hover pada logo ===
+      document.getElementById("logoImg").addEventListener("mouseover", () => {
+        document.getElementById("logoImg").style.transform = "scale(1.1)";
+      });
+      document.getElementById("logoImg").addEventListener("mouseout", () => {
+        document.getElementById("logoImg").style.transform = "scale(1)";
+      });
+
+      // === Event 3: Mode gelap ===
+      document.getElementById("btnToggleDark").addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const mode = document.body.classList.contains("dark")
+          ? "Dark"
+          : "Light";
+        localStorage.setItem("theme", mode);
+      });
+
+      // === Web Storage: Terapkan kembali preferensi ===
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "Dark") {
+          document.body.classList.add("dark");
+        }
+        if (localStorage.getItem("infoVisible") === "true") {
+          document.getElementById("infoCard").style.display = "block";
+        }
+      };
+
+      // === Fetch Data Panduan Registrasi (Async + Promise) ===
+      async function loadGuide() {
+        try {
+          const res = await fetch("assets/guide.json");
+          const data = await res.json();
+          const container = document.getElementById("guideContainer");
+          container.innerHTML = "<h3>Panduan Registrasi e-KTP:</h3>";
+          data.forEach((item, i) => {
+            const p = document.createElement("p");
+            p.textContent = `${i + 1}. ${item.step}`;
+            container.appendChild(p);
+          });
+        } catch (err) {
+          console.error("Gagal memuat panduan:", err);
+        }
+      }
+
+      document.getElementById("btnGuide").addEventListener("click", loadGuide);
+    </script>
+  </body>
+</html>
