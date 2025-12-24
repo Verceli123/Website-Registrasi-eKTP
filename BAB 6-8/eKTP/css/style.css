@@ -1,0 +1,160 @@
+/* ====== Reset & Base ====== */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  text-align: center;
+  color: #333;
+}
+
+a {
+  transition: 0.3s;
+}
+
+/* ====== Header ====== */
+header {
+  background: linear-gradient(90deg, #0066cc, #3399ff);
+  padding: 20px;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+/* ====== Main ====== */
+main {
+  margin: 40px 20px 60px 20px;
+  padding: 20px;
+}
+
+/* ====== Logo ====== */
+.logo img {
+  width: 160px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ====== Form ====== */
+form {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 420px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+input, select, button, textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3399ff;
+  box-shadow: 0 0 5px rgba(51,153,255,0.4);
+  outline: none;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #004d99;
+  transform: scale(1.05);
+}
+
+/* ====== Table ====== */
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 85%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background: linear-gradient(90deg, #0066cc, #3399ff);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f1f8ff;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* ====== Footer ====== */
+footer {
+  margin-top: 60px;
+  background: #e6ecf0;
+  padding: 20px;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.05);
+}
+
+/* ====== Dashboard Image ====== */
+.dashboard-img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-img:hover {
+  transform: scale(1.05);
+}
